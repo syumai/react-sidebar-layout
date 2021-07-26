@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import "./App.css";
 
 function Resizer({ position, initialPos, setWidth }) {
@@ -32,18 +32,18 @@ function Resizer({ position, initialPos, setWidth }) {
 
   const addEventListeners = useCallback(
     (node) => {
-      node.addEventListener("mousedown", mouseDownHandler);
-      node.addEventListener("mouseup", mouseUpHandler);
-      document.addEventListener("mousemove", mouseMoveHandler);
+      node.addEventListener("pointerdown", mouseDownHandler);
+      node.addEventListener("pointerup", mouseUpHandler);
+      document.addEventListener("pointermove", mouseMoveHandler);
     },
     [mouseDownHandler, mouseUpHandler, mouseMoveHandler]
   );
 
   const removeEventListeners = useCallback(
     (node) => {
-      node.removeEventListener("mousedown", mouseDownHandler);
-      node.removeEventListener("mouseup", mouseUpHandler);
-      document.removeEventListener("mousemove", mouseMoveHandler);
+      node.removeEventListener("pointerdown", mouseDownHandler);
+      node.removeEventListener("pointerup", mouseUpHandler);
+      document.removeEventListener("pointermove", mouseMoveHandler);
     },
     [mouseDownHandler, mouseUpHandler, mouseMoveHandler]
   );
