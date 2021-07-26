@@ -75,8 +75,6 @@ function Resizer({ position, initialPos, setWidth }) {
     [addEventListeners, removeEventListeners]
   );
 
-  useEffect(() => {}, [xPos]);
-
   let classNames = ["resizer"];
   const style = {};
   if (position === "right") {
