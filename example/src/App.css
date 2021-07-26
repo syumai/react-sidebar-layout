@@ -11,6 +11,7 @@
   user-select: none;
   grid-area: sidebar;
   background-color: #ffadad;
+  overflow-y: scroll;
 }
 
 .primary-view {
@@ -18,6 +19,7 @@
   user-select: none;
   grid-area: primary-view;
   background-color: #ffd6a5;
+  overflow-y: scroll;
 }
 
 .secondary-view {
@@ -25,6 +27,7 @@
   user-select: none;
   grid-area: secondary-view;
   background-color: #fdffb6;
+  overflow-y: scroll;
 }
 
 .resizer {
