@@ -6,15 +6,15 @@ function Resizer({ position, initialPos, setWidth }) {
   const [dragging, setDragging] = useState(false);
   const [xPos, setXPos] = useState(initialPos);
 
-  const mouseDownHandler = useCallback((e) => {
+  const pointerDownHandler = useCallback((e) => {
     setDragging(true);
   }, []);
 
-  const mouseUpHandler = useCallback((e) => {
+  const pointerUpHandler = useCallback((e) => {
     setDragging(false);
   }, []);
 
-  const mouseMoveHandler = useCallback(
+  const pointerMoveHandler = useCallback(
     (e) => {
       if (!dragging) {
         return;
@@ -32,20 +32,20 @@ function Resizer({ position, initialPos, setWidth }) {
 
   const addEventListeners = useCallback(
     (node) => {
-      node.addEventListener("pointerdown", mouseDownHandler);
-      node.addEventListener("pointerup", mouseUpHandler);
-      document.addEventListener("pointermove", mouseMoveHandler);
+      node.addEventListener("pointerdown", pointerDownHandler);
+      node.addEventListener("pointerup", pointerUpHandler);
+      document.addEventListener("pointermove", pointerMoveHandler);
     },
-    [mouseDownHandler, mouseUpHandler, mouseMoveHandler]
+    [pointerDownHandler, pointerUpHandler, pointerMoveHandler]
   );
 
   const removeEventListeners = useCallback(
     (node) => {
-      node.removeEventListener("pointerdown", mouseDownHandler);
-      node.removeEventListener("pointerup", mouseUpHandler);
-      document.removeEventListener("pointermove", mouseMoveHandler);
+      node.removeEventListener("pointerdown", pointerDownHandler);
+      node.removeEventListener("pointerup", pointerUpHandler);
+      document.removeEventListener("pointermove", pointerMoveHandler);
     },
-    [mouseDownHandler, mouseUpHandler, mouseMoveHandler]
+    [pointerDownHandler, pointerUpHandler, pointerMoveHandler]
   );
 
   const resizerCallbackRef = useCallback(
