@@ -1,16 +1,26 @@
-import { useCallback, useRef, useState } from "react";
+import { CSSProperties, useCallback, useMemo, useRef, useState } from "react";
 import "./App.css";
 
-function Resizer({ position, initialPos, setWidth }) {
+interface ResizerProps {
+  position: string;
+  initialPos: number;
+  setWidth: (width: number) => void;
+}
+
+function Resizer({
+  position,
+  initialPos,
+  setWidth,
+}: ResizerProps): JSX.Element {
   const resizerRef = useRef(null);
   const [dragging, setDragging] = useState(false);
   const [xPos, setXPos] = useState(initialPos);
 
-  const pointerDownHandler = useCallback((e) => {
+  const pointerDownHandler = useCallback(() => {
     setDragging(true);
   }, []);
 
-  const pointerUpHandler = useCallback((e) => {
+  const pointerUpHandler = useCallback(() => {
     setDragging(false);
   }, []);
 
@@ -19,7 +29,7 @@ function Resizer({ position, initialPos, setWidth }) {
       if (!dragging) {
         return;
       }
-      let nextXPos;
+      let nextXPos = 0;
       setXPos((prev) => {
         const movementX = e.movementX * (position === "right" ? -1 : 1);
         nextXPos = prev + movementX;
@@ -75,25 +85,23 @@ function Resizer({ position, initialPos, setWidth }) {
     [addEventListeners, removeEventListeners]
   );
 
-  let classNames = ["resizer"];
-  const style = {};
-  if (position === "right") {
-    classNames.push("resizer-right");
-    style.right = xPos - 3;
-  } else {
-    classNames.push("resizer-left");
-    style.left = xPos - 3;
-  }
-  return (
-    <div
-      ref={resizerCallbackRef}
-      className={classNames.join(" ")}
-      style={style}
-    ></div>
-  );
+  const { className, style } = useMemo(() => {
+    const classNames = ["resizer"];
+    const style: CSSProperties = {};
+    if (position === "right") {
+      classNames.push("resizer-right");
+      style.right = xPos - 3;
+    } else {
+      classNames.push("resizer-left");
+      style.left = xPos - 3;
+    }
+    return { className: classNames.join(" "), style };
+  }, [position, xPos]);
+
+  return <div ref={resizerCallbackRef} className={className} style={style} />;
 }
 
-function App() {
+function App(): JSX.Element {
   const [sidebarWidth, setSidebarWidth] = useState(150);
   const [secondaryViewWidth, setSecondaryViewWidth] = useState(150);
   return (
