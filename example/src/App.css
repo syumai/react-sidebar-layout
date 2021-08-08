@@ -1,16 +1,7 @@
-.layout {
-  position: relative;
-  display: grid;
-  grid-template-areas: "sidebar primary-view secondary-view";
-  width: 100%;
-  height: 100%;
-}
-
 .sidebar {
   display: flex;
   padding: 10px;
   user-select: none;
-  grid-area: sidebar;
   background-color: #ffadad;
   overflow-y: scroll;
 }
@@ -19,7 +10,6 @@
   display: flex;
   padding: 10px;
   user-select: none;
-  grid-area: primary-view;
   background-color: #ffd6a5;
   overflow-y: scroll;
 }
@@ -28,20 +18,6 @@
   display: flex;
   padding: 10px;
   user-select: none;
-  grid-area: secondary-view;
   background-color: #fdffb6;
   overflow-y: scroll;
-}
-
-.resizer {
-  position: absolute;
-  width: 6px;
-  height: 100%;
-  background-color: #fb6f92;
-  z-index: 1000;
-  cursor: col-resize;
-}
-
-.resizer:hover {
-  background-color: #ff285d;
 }
