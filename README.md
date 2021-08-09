@@ -26,15 +26,15 @@ yarn add @syumai/react-sidebar-layout
 import { PrimaryView, SecondaryView, Sidebar, SidebarLayout } from "react-sidebar-layout";
 
 const SidebarContent = () => (
-  <header><h1>Sidebar</h1></header>
+  <header>Sidebar</header>
 );
 
 const PrimaryViewContent = () => (
-  <header><h1>Primary view</h1></header>
+  <header>Primary view</header>
 );
 
 const SecondaryViewContent = () => (
-  <header><h1>Secondary view</h1></header>
+  <header>Secondary view</header>
 );
 
 const App = (): JSX.Element => {

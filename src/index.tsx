@@ -1,11 +1,4 @@
-import {
-  EventHandler,
-  MouseEventHandler,
-  ReactNode,
-  useCallback,
-  useRef,
-  useState,
-} from "react";
+import { ReactNode, useCallback, useRef, useState } from "react";
 import styled from "styled-components";
 import "./index.css";
 
