@@ -25,4 +25,8 @@ module.exports = {
     filename: "index.js",
     path: path.resolve(__dirname, "."),
   },
+  externals: {
+    react: "react",
+    "styled-components": "styled-components",
+  },
 };
