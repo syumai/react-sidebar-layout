@@ -4,9 +4,9 @@
 
 ## Example
 
-![screenshot.jpg](./images/screenshot.jpg)
-
 https://syumai.github.io/react-sidebar-layout-examples/basic/build/
+
+![screenshot.jpg](./images/screenshot.jpg)
 
 ## Installation
 
@@ -54,8 +54,15 @@ const App = (): JSX.Element => {
 
 #### Sidebar widths
 
-* defaultSidebarWidth
-* defaultSidebarWidth
+* `defaultSidebarWidth`: number (default: 200)
+* `defaultSecondaryViewWidth`: number (default: 200)
+
+#### Resizer styles
+
+* `color`: string (default: transparent)
+* `hoveredColor`: string (default: #1e90ff)
+* `transitionDuration` (milli seconds): number (default: 300)
+* `width` (px): number (defualt: 4)
 
 ### Customize Styles
 

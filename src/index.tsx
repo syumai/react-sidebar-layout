@@ -30,7 +30,7 @@ const ResizerDiv = styled.div<ResizerStyleProps & ResizerDynamicStyleProps>`
   width: ${(props) => props.width}px;
   left: ${(props) => `${props.left}px` || "initial"};
   right: ${(props) => `${props.right}px` || "initial"};
-  transition: background-color ${(props) => props.transitionDuration || "300"}ms;
+  transition: background-color ${(props) => props.transitionDuration || 300}ms;
   &:hover {
     background-color: ${(props) => props.hoveredColor || "#1e90ff"};
   }
@@ -133,7 +133,7 @@ export const Resizer = ({
 };
 
 /***
- * Layout compoentns
+ * Layout components
  */
 
 type ChildrenProps = {
@@ -176,8 +176,8 @@ const LayoutDiv = styled.div<LayoutDynamicStyleProps>`
 `;
 
 export const SidebarLayout = ({
-  defaultSidebarWidth = 150,
-  defaultSecondaryViewWidth = 150,
+  defaultSidebarWidth = 200,
+  defaultSecondaryViewWidth = 200,
   children,
 }: SidebarLayoutProps): JSX.Element => {
   const [sidebarWidth, setSidebarWidth] = useState(defaultSidebarWidth);
