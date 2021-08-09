@@ -17,10 +17,18 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "declaration": true,
+    "declarationDir": "./",
+    "declarationMap": true,
+    "sourceMap": true,
+    "jsx": "react-jsx",
+    "outDir": "./",
   },
   "include": [
-    "src"
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "example"
   ]
 }

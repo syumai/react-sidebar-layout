@@ -1,6 +1,6 @@
 import { ReactNode, useCallback, useRef, useState } from "react";
 import styled from "styled-components";
-import "./components.css";
+import "./index.css";
 
 /***
  * Resizer Component
@@ -32,7 +32,7 @@ const ResizerDiv = styled.div<ResizerStyleProps & ResizerDynamicStyleProps>`
   right: ${(props) => `${props.right}px` || "initial"};
   transition: background-color ${(props) => props.transitionDuration || "300"}ms;
   &:hover {
-    background-color: ${(props) => props.hoveredColor || "#ff285d"};
+    background-color: ${(props) => props.hoveredColor || "#1e90ff"};
   }
 `;
 
