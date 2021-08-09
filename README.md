@@ -62,7 +62,7 @@ const App = (): JSX.Element => {
 * `color`: string (default: transparent)
 * `hoveredColor`: string (default: #1e90ff)
 * `transitionDuration` (milli seconds): number (default: 300)
-* `width` (px): number (defualt: 4)
+* `width` (px): number (default: 6)
 
 ### Customize Styles
 

@@ -1,4 +1,11 @@
-import { ReactNode, useCallback, useRef, useState } from "react";
+import {
+  EventHandler,
+  MouseEventHandler,
+  ReactNode,
+  useCallback,
+  useRef,
+  useState,
+} from "react";
 import styled from "styled-components";
 import "./index.css";
 
@@ -40,7 +47,7 @@ export const Resizer = ({
   color,
   hoveredColor,
   transitionDuration,
-  width = 4,
+  width = 6,
   position,
   initialPos,
   setWidth,
@@ -49,16 +56,16 @@ export const Resizer = ({
   const [dragging, setDragging] = useState(false);
   const [xPos, setXPos] = useState(initialPos);
 
-  const pointerDownHandler = useCallback(() => {
+  const mouseDownHandler = useCallback(() => {
     setDragging(true);
   }, []);
 
-  const pointerUpHandler = useCallback(() => {
+  const mouseUpHandler = useCallback(() => {
     setDragging(false);
   }, []);
 
-  const pointerMoveHandler = useCallback(
-    (e) => {
+  const mouseMoveHandler = useCallback(
+    (e: MouseEvent) => {
       if (!dragging) {
         return;
       }
@@ -75,20 +82,20 @@ export const Resizer = ({
 
   const addEventListeners = useCallback(
     (node) => {
-      node.addEventListener("pointerdown", pointerDownHandler);
-      node.addEventListener("pointerup", pointerUpHandler);
-      document.addEventListener("pointermove", pointerMoveHandler);
+      node.addEventListener("mousedown", mouseDownHandler);
+      node.addEventListener("mouseup", mouseUpHandler);
+      document.addEventListener("mousemove", mouseMoveHandler);
     },
-    [pointerDownHandler, pointerUpHandler, pointerMoveHandler]
+    [mouseDownHandler, mouseUpHandler, mouseMoveHandler]
   );
 
   const removeEventListeners = useCallback(
     (node) => {
-      node.removeEventListener("pointerdown", pointerDownHandler);
-      node.removeEventListener("pointerup", pointerUpHandler);
-      document.removeEventListener("pointermove", pointerMoveHandler);
+      node.removeEventListener("mousedown", mouseDownHandler);
+      node.removeEventListener("mouseup", mouseUpHandler);
+      document.removeEventListener("mousemove", mouseMoveHandler);
     },
-    [pointerDownHandler, pointerUpHandler, pointerMoveHandler]
+    [mouseDownHandler, mouseUpHandler, mouseMoveHandler]
   );
 
   const resizerCallbackRef = useCallback(

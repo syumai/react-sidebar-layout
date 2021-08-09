@@ -16,7 +16,7 @@ declare type ResizerProps = ResizerStyleProps & {
 };
 export declare const Resizer: ({ color, hoveredColor, transitionDuration, width, position, initialPos, setWidth, }: ResizerProps) => JSX.Element;
 /***
- * Layout compoentns
+ * Layout components
  */
 declare type ChildrenProps = {
     children: ReactNode;
