@@ -187,7 +187,7 @@ export const SidebarLayout = ({
   return (
     <>
       <LayoutDiv
-        className="layout"
+        className="sidebar-layout"
         sidebarWidth={sidebarWidth}
         secondaryViewWidth={secondaryViewWidth}
       >

@@ -1,4 +1,4 @@
-.layout {
+.sidebar-layout {
   position: relative;
   display: grid;
   grid-template-areas: "sidebar primary-view secondary-view";
@@ -25,4 +25,3 @@
 .secondary-view {
   grid-area: secondary-view;
 }
-
