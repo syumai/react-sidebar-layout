@@ -4,6 +4,14 @@
 
 https://syumai.github.io/react-sidebar-layout/example/build/
 
+## Installation
+
+```
+npm install --save @syumai/react-sidebar-layout
+# or
+yarn add @syumai/react-sidebar-layout
+```
+
 ## Usage
 
 * import SidebarLayout, Sidebar, PrimaryView, SecondaryView components from this package.
