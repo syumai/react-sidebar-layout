@@ -24,9 +24,14 @@ module.exports = {
   output: {
     filename: "index.js",
     path: path.resolve(__dirname, "."),
+    library: {
+      name: "reactSidebarLayout",
+      type: "umd",
+    },
   },
   externals: {
     react: "react",
+    "react/jsx-runtime": "react/jsx-runtime",
     "styled-components": "styled-components",
   },
 };
