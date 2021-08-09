@@ -2,6 +2,9 @@
   "name": "@syumai/react-sidebar-layout",
   "version": "0.1.0",
   "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/syumai/react-sidebar-layout.git"
