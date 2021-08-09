@@ -1,8 +1,12 @@
 # react-sidebar-layout
 
+* react-sidebar-layout provides components which enables 3-pain layout with resizable sidebars.
+
 ## Example
 
-https://syumai.github.io/react-sidebar-layout/example/build/
+![screenshot.jpg](./images/screenshot.jpg)
+
+https://syumai.github.io/react-sidebar-layout-examples/basic/build/
 
 ## Installation
 
@@ -18,7 +22,7 @@ yarn add @syumai/react-sidebar-layout
 * Use it in your application like below.
   - Sidebar / PrimaryView / SecondaryView are just a container component which can contain any contents.
 
-```ts
+```tsx
 import { PrimaryView, SecondaryView, Sidebar, SidebarLayout } from "react-sidebar-layout";
 
 const SidebarContent = () => (
@@ -43,6 +47,15 @@ const App = (): JSX.Element => {
   );
 };
 ```
+
+### Properties
+
+* Properties can be passed as attributes of `SidebarLayout`.
+
+#### Sidebar widths
+
+* defaultSidebarWidth
+* defaultSidebarWidth
 
 ### Customize Styles
 
