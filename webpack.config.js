@@ -12,10 +12,6 @@ module.exports = {
         use: "ts-loader",
         exclude: /node_modules|example/,
       },
-      {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
-      },
     ],
   },
   resolve: {
@@ -32,6 +28,5 @@ module.exports = {
   externals: {
     react: "react",
     "react/jsx-runtime": "react/jsx-runtime",
-    "styled-components": "styled-components",
   },
 };
